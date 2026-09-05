@@ -1,0 +1,12 @@
+[package]
+name = "vbf-entity"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Layer 0 entity, definition, component-instance, and catalog records for VBF."
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+vbf-types = { path = "../vbf-types" }
+vbf-schema = { path = "../vbf-schema" }
