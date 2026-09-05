@@ -3,6 +3,8 @@ members = [
     "crates/vbf-types",
     "crates/vbf-spatial",
     "crates/vbf-information",
+    "crates/vbf-package",
+    "crates/vbf-validation",
 ]
 resolver = "2"
 
