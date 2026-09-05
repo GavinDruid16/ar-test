@@ -1,0 +1,14 @@
+[package]
+name = "vbf-store"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Layer 0 authoritative in-memory store contracts for VBF."
+
+[dependencies]
+vbf-types = { path = "../vbf-types" }
+vbf-entity = { path = "../vbf-entity" }
+vbf-relationship = { path = "../vbf-relationship" }
+vbf-spatial = { path = "../vbf-spatial" }
+vbf-information = { path = "../vbf-information" }
+vbf-event = { path = "../vbf-event" }
