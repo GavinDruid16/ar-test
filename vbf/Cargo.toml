@@ -1,5 +1,8 @@
 [workspace]
-members = ["crates/vbf-types"]
+members = [
+    "crates/vbf-types",
+    "crates/vbf-spatial",
+]
 resolver = "2"
 
 [workspace.package]
