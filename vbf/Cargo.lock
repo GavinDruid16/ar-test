@@ -198,6 +198,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "vbf-spatial"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "vbf-types",
+]
+
+[[package]]
 name = "vbf-types"
 version = "0.1.0"
 dependencies = [

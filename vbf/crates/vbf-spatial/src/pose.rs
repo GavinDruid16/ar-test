@@ -1,4 +1,4 @@
-﻿use crate::WorldPosition;
+use crate::WorldPosition;
 use serde::{Deserialize, Serialize};
 use vbf_types::Angle;
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Hash, Serialize, Deserialize)]

@@ -1,4 +1,4 @@
-﻿//! Continuous spatial primitives.
+//! Continuous spatial primitives.
 //!
 //! Hex grids are optional overlays. World position is expressed in coordinate
 //! frames and integer millimetres.

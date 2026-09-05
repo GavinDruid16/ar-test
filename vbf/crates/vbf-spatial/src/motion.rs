@@ -1,4 +1,4 @@
-﻿use crate::WorldPose;
+use crate::WorldPose;
 use serde::{Deserialize, Serialize};
 use vbf_types::SimTime;
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Hash, Serialize, Deserialize)]

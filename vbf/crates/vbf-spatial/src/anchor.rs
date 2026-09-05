@@ -1,4 +1,4 @@
-﻿use crate::LocalPose;
+use crate::LocalPose;
 use serde::{Deserialize, Serialize};
 use std::collections::BTreeMap;
 use vbf_types::{DefinitionUid, EntityUid, Key};
@@ -24,10 +24,7 @@ impl DefinitionAnchors {
             anchors: BTreeMap::new(),
         }
     }
-    pub fn insert(
-        &mut self,
-        anchor: SpatialAnchorDefinition,
-    ) -> Option<SpatialAnchorDefinition> {
+    pub fn insert(&mut self, anchor: SpatialAnchorDefinition) -> Option<SpatialAnchorDefinition> {
         self.anchors.insert(anchor.key.clone(), anchor)
     }
     pub fn get(&self, key: &str) -> Option<&SpatialAnchorDefinition> {
