@@ -404,7 +404,7 @@ mod tests {
 
     fn basic_schema() -> RelationshipSchema {
         RelationshipSchema::new(
-            Key::new(brelationship.operated_by").unwrap(),
+            Key::new("relationship.operated_by").unwrap(),
             1,
             Key::new("module.core").unwrap(),
             vec![
@@ -444,7 +444,7 @@ mod tests {
 
         let relationship = Relationship::new(
             RelationshipUid::new(),
-            Key::new(brelationship.instance.test").unwrap(),
+            Key::new("relationship.instance.test").unwrap(),
             schema.schema_ref(),
             vec![
                 crate::RelationshipParticipant::new(asset_entity.uid, Key::new("asset").unwrap()),
