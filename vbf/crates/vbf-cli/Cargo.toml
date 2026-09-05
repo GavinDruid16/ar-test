@@ -1,0 +1,13 @@
+[package]
+name = "vbf-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Command-line diagnostics for the VBF Layer 0 workspace."
+
+[[bin]]
+name = "vbf"
+path = "src/main.rs"
+
+[dependencies]
+vbf-types = { path = "../vbf-types" }
