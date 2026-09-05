@@ -1,11 +1,12 @@
 name: VBF Types Verify
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - vbf-cargo-verify-20260904
     paths:
-      - 'vbf/**'
+      - 'vbf/crates/vbf-types/**'
       - '.github/workflows/vbf-types-verify.yml'
 
 permissions:
