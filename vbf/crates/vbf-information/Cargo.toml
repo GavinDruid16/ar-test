@@ -1,0 +1,11 @@
+[package]
+name = "vbf-information"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Layer 0 information, epistemic value, and provenance records for VBF."
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+vbf-types = { path = "../vbf-types" }
