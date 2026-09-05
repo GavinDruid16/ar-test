@@ -1,0 +1,18 @@
+name: VBF Cargo Runner Probe
+
+on:
+  push:
+    branches:
+      - vbf-cargo-verify-20260904
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rust toolchain
+        run: |
+          rustc --version
+          cargo --version
+          cargo fmt --version
+          cargo clippy --version
