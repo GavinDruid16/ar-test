@@ -1,0 +1,13 @@
+[package]
+name = "vbf-relationship"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Layer 0 first-class relationship schemas, records, catalogs, and validation for VBF."
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+vbf-types = { path = "../vbf-types" }
+vbf-schema = { path = "../vbf-schema" }
+vbf-entity = { path = "../vbf-entity" }
