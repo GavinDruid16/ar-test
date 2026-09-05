@@ -198,6 +198,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "vbf-cli"
+version = "0.1.0"
+dependencies = [
+ "vbf-types",
+]
+
+[[package]]
 name = "vbf-information"
 version = "0.1.0"
 dependencies = [
