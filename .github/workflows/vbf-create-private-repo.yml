@@ -1,0 +1,22 @@
+name: Create Private VBF Repository
+
+on:
+  push:
+    branches:
+      - vbf-full-migration-20260905
+    paths:
+      - .github/workflows/vbf-create-private-repo.yml
+  workflow_dispatch:
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create private VBF repository
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh repo create GavinDruid16/VBF \
+            --private \
+            --description "Virtual Battlefield (VBF) — digital implementation environment for The Box"
