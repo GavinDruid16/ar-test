@@ -171,3 +171,35 @@ cargo test --workspace
 ```
 
 This pass should not be marked validated until all four commands succeed.
+
+## 2026-09-05 — Full migrated workspace validation
+
+Environment: GitHub Actions `ubuntu-24.04` runner; Rust `1.98.0`; Cargo `1.98.0`; rustfmt `1.9.0-stable`; Clippy `0.1.98`.
+
+Validated commit: `67f5b92370719468c1636a84353e6371ac24c2ee` (`Finalize VBF migration cleanup`).
+
+### Results
+
+- `cargo check --workspace`: **PASS**
+- `cargo test --workspace`: **PASS**
+  - 70 unit/integration tests passed across the workspace
+  - 0 failed
+  - all doctest targets passed
+- `cargo clippy --workspace --all-targets -- -D warnings`: **PASS**
+- `cargo fmt --all -- --check`: **PASS**
+
+### Migration state covered by this run
+
+- all 12 workspace crates are present and active;
+- September 4 Event, Store, spatial-anchor/pose/motion, correlation UID, and rotational-speed changes are included;
+- the current root README is present;
+- `TREE.txt` reflects the migrated September 4 source layout;
+- temporary migration/probe workflows are removed except the permanent workspace verification workflow;
+- temporary `vbf-cargo-verify` and `vbf-transfer` trees are removed;
+- tracked Cargo build output (`vbf/target`) is removed.
+
+### Status
+
+**FULL WORKSPACE VALIDATED.**
+
+This record supersedes the earlier pending cross-crate validation notices for the current migrated source. Future architectural changes should preserve the same four-command CI gate and add subsystem-specific regression coverage as the corresponding layers mature.
