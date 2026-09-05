@@ -16,3 +16,9 @@ jobs:
           cargo --version
           cargo fmt --version
           cargo clippy --version
+      - name: Compile probe
+        run: |
+          rm -rf /tmp/vbf-cargo-probe
+          cargo new --bin --edition 2024 /tmp/vbf-cargo-probe
+          cargo check --manifest-path /tmp/vbf-cargo-probe/Cargo.toml
+          cargo test --manifest-path /tmp/vbf-cargo-probe/Cargo.toml
