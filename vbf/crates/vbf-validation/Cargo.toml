@@ -1,0 +1,10 @@
+[package]
+name = "vbf-validation"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Layer 0 validation reporting and validator contracts for VBF."
+
+[dependencies]
+serde.workspace = true
+vbf-types = { path = "../vbf-types" }
