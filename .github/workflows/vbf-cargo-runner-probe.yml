@@ -1,9 +1,7 @@
 name: VBF Cargo Runner Probe
 
 on:
-  push:
-    branches:
-      - vbf-cargo-verify-20260904
+  workflow_dispatch:
 
 jobs:
   probe:
