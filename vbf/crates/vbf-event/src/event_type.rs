@@ -1,4 +1,4 @@
-﻿use serde::{Deserialize, Deserializer, Serialize, de};
+use serde::{Deserialize, Deserializer, Serialize, de};
 use std::error::Error;
 use std::fmt;
 use vbf_types::Key;

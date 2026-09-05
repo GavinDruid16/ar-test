@@ -1,4 +1,4 @@
-﻿use crate::WorldState;
+use crate::WorldState;
 use std::error::Error;
 use std::fmt;
 use vbf_event::StateMutation;

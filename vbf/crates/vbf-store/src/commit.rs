@@ -1,4 +1,4 @@
-﻿use crate::{transaction::apply_mutations, TransactionError, WorldState};
+use crate::{TransactionError, WorldState, transaction::apply_mutations};
 use std::error::Error;
 use std::fmt;
 use vbf_event::EventEnvelope;
@@ -61,10 +61,7 @@ pub(crate) fn commit_event(
     }
     let expected_sequence = match history.last() {
         None => EventSequence::ZERO,
-        Some(last) => last
-            .sequence
-            .next()
-            .ok_or(CommitError::SequenceOverflow)?,
+        Some(last) => last.sequence.next().ok_or(CommitError::SequenceOverflow)?,
     };
     if event.sequence != expected_sequence {
         return Err(CommitError::SequenceMismatch {
@@ -95,11 +92,8 @@ mod tests {
             uid: EventUid::new(),
             sequence: EventSequence::new(sequence),
             sim_time: SimTime::from_millis(sim_time_ms),
-            event_type: EventTypeRef::new(
-                Key::new("event.test").expect("valid test key"),
-                1,
-            )
-            .expect("valid event type version"),
+            event_type: EventTypeRef::new(Key::new("event.test").expect("valid test key"), 1)
+                .expect("valid event type version"),
             origin: EventOrigin::System,
             cause: None,
             correlation: None,
@@ -113,8 +107,7 @@ mod tests {
         let mut state = WorldState::default();
         let initial_revision = state.revision;
         let mut history = Vec::new();
-        commit_event(&mut state, &mut history, event(0, 1_250))
-            .expect("first event should commit");
+        commit_event(&mut state, &mut history, event(0, 1_250)).expect("first event should commit");
         assert_eq!(state.sim_time, SimTime::from_millis(1_250));
         assert!(state.revision > initial_revision);
         assert_eq!(history.len(), 1);
@@ -133,8 +126,7 @@ mod tests {
     fn simulation_time_cannot_regress_after_a_commit() {
         let mut state = WorldState::default();
         let mut history = Vec::new();
-        commit_event(&mut state, &mut history, event(0, 1_250))
-            .expect("first event should commit");
+        commit_event(&mut state, &mut history, event(0, 1_250)).expect("first event should commit");
         let result = commit_event(&mut state, &mut history, event(1, 1_249));
         assert!(matches!(result, Err(CommitError::TimeRegression { .. })));
         assert_eq!(state.sim_time, SimTime::from_millis(1_250));

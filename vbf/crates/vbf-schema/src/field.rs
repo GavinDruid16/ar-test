@@ -1,4 +1,4 @@
-﻿use crate::{FieldConstraint, PersistenceClass};
+use crate::{FieldConstraint, PersistenceClass};
 use serde::{Deserialize, Serialize};
 use vbf_types::Key;
 /// Serialized value shape expected for one field.

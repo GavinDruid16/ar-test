@@ -1,4 +1,4 @@
-﻿use std::collections::BTreeMap;
+use std::collections::BTreeMap;
 use vbf_entity::Entity;
 use vbf_information::InformationRecord;
 use vbf_relationship::Relationship;

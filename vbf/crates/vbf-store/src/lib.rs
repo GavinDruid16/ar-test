@@ -1,4 +1,4 @@
-﻿mod commit;
+mod commit;
 pub mod memory;
 pub mod state;
 mod transaction;

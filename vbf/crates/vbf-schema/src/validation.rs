@@ -1,11 +1,11 @@
-﻿use crate::{FieldConstraint, FieldSchema, FieldType, PersistenceClass, SchemaContext};
+use crate::{FieldConstraint, FieldSchema, FieldType, PersistenceClass, SchemaContext};
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 use std::fmt;
 use vbf_types::{
-    Angle, BranchUid, CorrelationUid, DefinitionUid, DisplayName, Distance, EntityUid, EventSequence, EventUid,
-    Key, PackageUid, RelationshipUid, RotationalSpeed, SimDuration, SimTime, SnapshotUid,
-    SourceUid, Speed, StateRevision,
+    Angle, BranchUid, CorrelationUid, DefinitionUid, DisplayName, Distance, EntityUid,
+    EventSequence, EventUid, Key, PackageUid, RelationshipUid, RotationalSpeed, SimDuration,
+    SimTime, SnapshotUid, SourceUid, Speed, StateRevision,
 };
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]

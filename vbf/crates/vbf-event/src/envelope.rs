@@ -1,4 +1,4 @@
-﻿use crate::{EventOrigin, EventParticipant, EventTypeRef, StateMutation};
+use crate::{EventOrigin, EventParticipant, EventTypeRef, StateMutation};
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 use vbf_types::{CorrelationUid, EntityUid, EventSequence, EventUid, SimTime};

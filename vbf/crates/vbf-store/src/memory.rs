@@ -1,4 +1,4 @@
-﻿use crate::{commit::commit_event as apply_event_commit, CommitError, WorldState};
+use crate::{CommitError, WorldState, commit::commit_event as apply_event_commit};
 use vbf_event::EventEnvelope;
 use vbf_types::{EntityUid, RelationshipUid};
 #[derive(Clone, Debug, Default)]

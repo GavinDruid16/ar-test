@@ -1,4 +1,4 @@
-﻿pub mod envelope;
+pub mod envelope;
 pub mod event_type;
 pub mod mutation;
 pub mod origin;

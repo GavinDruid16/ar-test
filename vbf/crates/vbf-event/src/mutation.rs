@@ -1,4 +1,4 @@
-﻿use serde::{Deserialize, Serialize};
+use serde::{Deserialize, Serialize};
 use vbf_entity::{ComponentData, Entity};
 use vbf_relationship::Relationship;
 use vbf_spatial::{AngularVelocity3, Orientation3, SpatialPosition, Velocity3};
