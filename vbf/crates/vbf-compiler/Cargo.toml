@@ -1,0 +1,18 @@
+[package]
+name = "vbf-compiler"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Layer 0 compiler from human-authored records to validated VBF state."
+
+[dependencies]
+serde.workspace = true
+vbf-types = { path = "../vbf-types" }
+vbf-schema = { path = "../vbf-schema" }
+vbf-entity = { path = "../vbf-entity" }
+vbf-relationship = { path = "../vbf-relationship" }
+vbf-spatial = { path = "../vbf-spatial" }
+vbf-package = { path = "../vbf-package" }
+vbf-information = { path = "../vbf-information" }
+vbf-validation = { path = "../vbf-validation" }
+vbf-store = { path = "../vbf-store" }
