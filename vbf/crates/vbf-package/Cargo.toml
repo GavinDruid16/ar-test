@@ -1,0 +1,10 @@
+[package]
+name = "vbf-package"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Layer 0 VBF package manifests and dependency locks."
+
+[dependencies]
+serde.workspace = true
+vbf-types = { path = "../vbf-types" }
