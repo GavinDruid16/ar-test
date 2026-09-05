@@ -1,4 +1,5 @@
 .gitignore
+Cargo.lock
 Cargo.toml
 LAYER_0.md
 README.md
@@ -23,9 +24,11 @@ crates/vbf-entity/src/validation.rs
 crates/vbf-entity/tests/m8_entities.rs
 crates/vbf-event/Cargo.toml
 crates/vbf-event/src/envelope.rs
+crates/vbf-event/src/event_type.rs
 crates/vbf-event/src/lib.rs
 crates/vbf-event/src/mutation.rs
 crates/vbf-event/src/origin.rs
+crates/vbf-event/src/participant.rs
 crates/vbf-information/Cargo.toml
 crates/vbf-information/src/epistemic.rs
 crates/vbf-information/src/lib.rs
@@ -56,14 +59,18 @@ crates/vbf-schema/src/persistence.rs
 crates/vbf-schema/src/registry.rs
 crates/vbf-schema/src/validation.rs
 crates/vbf-spatial/Cargo.toml
+crates/vbf-spatial/src/anchor.rs
 crates/vbf-spatial/src/frame.rs
 crates/vbf-spatial/src/geometry.rs
 crates/vbf-spatial/src/grid.rs
 crates/vbf-spatial/src/lib.rs
+crates/vbf-spatial/src/motion.rs
 crates/vbf-spatial/src/network.rs
+crates/vbf-spatial/src/pose.rs
 crates/vbf-spatial/src/position.rs
 crates/vbf-spatial/src/region.rs
 crates/vbf-store/Cargo.toml
+crates/vbf-store/src/commit.rs
 crates/vbf-store/src/lib.rs
 crates/vbf-store/src/memory.rs
 crates/vbf-store/src/state.rs
