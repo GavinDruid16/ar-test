@@ -1,4 +1,4 @@
-﻿//! Stable identity and human-readable naming.
+//! Stable identity and human-readable naming.
 //!
 //! VBF deliberately separates:
 //!

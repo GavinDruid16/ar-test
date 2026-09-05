@@ -1,4 +1,4 @@
-﻿//! Foundational value types shared by VBF.
+//! Foundational value types shared by VBF.
 //!
 //! This crate deliberately contains no battlefield rules. It defines small,
 //! validated types that higher layers can trust.

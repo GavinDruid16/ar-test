@@ -1,4 +1,4 @@
-﻿//! Small, explicit physical quantity types.
+//! Small, explicit physical quantity types.
 //!
 //! VBF should not pass unlabelled `f64` values around for distance, speed, or
 //! heading. These wrappers establish canonical integer storage while allowing
