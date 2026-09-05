@@ -21,8 +21,8 @@ jobs:
           path = Path('vbf/crates/vbf-relationship/src/validation.rs')
           text = path.read_text()
           replacements = {
-              'Key::new(brelationship.operated_by\\")': 'Key::new("relationship.operated_by")',
-              'Key::new(brelationship.instance.test\\")': 'Key::new("relationship.instance.test")',
+              'Key::new(brelationship.operated_by")': 'Key::new("relationship.operated_by")',
+              'Key::new(brelationship.instance.test")': 'Key::new("relationship.instance.test")',
           }
           for old, new in replacements.items():
               count = text.count(old)
