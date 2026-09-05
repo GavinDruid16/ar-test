@@ -1,0 +1,10 @@
+[package]
+name = "vbf-spatial"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Continuous-space Layer 0 primitives for VBF."
+
+[dependencies]
+serde.workspace = true
+vbf-types = { path = "../vbf-types" }
