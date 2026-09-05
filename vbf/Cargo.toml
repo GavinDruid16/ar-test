@@ -5,6 +5,7 @@ members = [
     "crates/vbf-information",
     "crates/vbf-package",
     "crates/vbf-validation",
+    "crates/vbf-cli",
 ]
 resolver = "2"
 
