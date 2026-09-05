@@ -1,0 +1,22 @@
+name: VBF Drive Download Probe
+
+on:
+  push:
+    branches:
+      - vbf-cargo-verify-20260904
+    paths:
+      - '.github/workflows/vbf-drive-download-probe.yml'
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Try anonymous Drive raw download
+        run: |
+          set -euxo pipefail
+          url='https://drive.usercontent.google.com/download?id=1DTtDqsBpS7MTalzWRYqk1Awlo58uP5OD&export=download&confirm=t'
+          curl -L --fail --silent --show-error "$url" -o /tmp/component.rs
+          wc -c /tmp/component.rs
+          head -c 80 /tmp/component.rs | od -An -tx1
+          grep -q 'ComponentSchemaRef' /tmp/component.rs
+          test "$(wc -c < /tmp/component.rs)" -eq 16997
