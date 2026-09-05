@@ -1,0 +1,11 @@
+[package]
+name = "vbf-schema"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Layer 0 schema and component metadata for VBF."
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+vbf-types = { path = "../vbf-types" }
