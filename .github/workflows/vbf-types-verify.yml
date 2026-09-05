@@ -1,0 +1,31 @@
+name: VBF Types Verify
+
+on:
+  push:
+    branches:
+      - vbf-cargo-verify-20260904
+    paths:
+      - 'vbf/**'
+      - '.github/workflows/vbf-types-verify.yml'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: vbf
+    steps:
+      - uses: actions/checkout@v4
+      - name: Toolchain
+        run: |
+          rustc --version
+          cargo --version
+      - name: Cargo check
+        run: cargo check --workspace
+      - name: Cargo test
+        run: cargo test --workspace
+      - name: Clippy
+        run: cargo clippy --workspace --all-targets -- -D warnings
+      - name: Rustfmt check
+        if: always()
+        run: cargo fmt --all -- --check
