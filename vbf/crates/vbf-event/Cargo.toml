@@ -1,0 +1,14 @@
+[package]
+name = "vbf-event"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Layer 0 semantic events and canonical state mutations for VBF."
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+vbf-types = { path = "../vbf-types" }
+vbf-entity = { path = "../vbf-entity" }
+vbf-relationship = { path = "../vbf-relationship" }
+vbf-spatial = { path = "../vbf-spatial" }
