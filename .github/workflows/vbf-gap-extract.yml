@@ -1,0 +1,42 @@
+name: VBF Gap Extraction
+
+on:
+  push:
+    branches:
+      - vbf-cargo-verify-20260904
+    paths:
+      - 'vbf-transfer-gap/READY'
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: vbf-cargo-verify-20260904
+          fetch-depth: 0
+      - name: Reassemble verified archive
+        run: |
+          cat vbf-transfer-gap/part.* > /tmp/vbf-gap.b64
+          base64 -d /tmp/vbf-gap.b64 > /tmp/vbf-gap.tar.gz
+          echo '9ccdc69a155a2a848df8c01e3deb5afb300a800b427e6f4fa458de19b05fd23b  /tmp/vbf-gap.tar.gz' | sha256sum -c -
+      - name: Extract missing crates
+        run: |
+          tar -xzf /tmp/vbf-gap.tar.gz -C vbf
+          test -f vbf/crates/vbf-schema/src/component.rs
+          test -f vbf/crates/vbf-entity/tests/m8_entities.rs
+          test -f vbf/crates/vbf-relationship/tests/m8_crew_relationships.rs
+      - name: Commit migrated source
+        run: |
+          git config user.name 'VBF migration runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git add vbf/crates/vbf-schema vbf/crates/vbf-entity vbf/crates/vbf-relationship
+          if git diff --cached --quiet; then
+            echo 'No source changes to commit.'
+          else
+            git commit -m 'Migrate schema entity and relationship crates from Drive'
+            git push origin HEAD:vbf-cargo-verify-20260904
+          fi
