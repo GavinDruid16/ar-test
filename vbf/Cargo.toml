@@ -1,10 +1,16 @@
 [workspace]
 members = [
     "crates/vbf-types",
+    "crates/vbf-schema",
+    "crates/vbf-entity",
+    "crates/vbf-relationship",
     "crates/vbf-spatial",
-    "crates/vbf-information",
     "crates/vbf-package",
     "crates/vbf-validation",
+    "crates/vbf-information",
+    "crates/vbf-event",
+    "crates/vbf-store",
+    "crates/vbf-compiler",
     "crates/vbf-cli",
 ]
 resolver = "2"
